@@ -1,0 +1,173 @@
+<style>
+	.ui.segment {
+		min-height: 200px;
+		/* -webkit-transition: all 0.5s, -webkit-transform 0.5s;
+    transition: all 0.5s, transform 0.5s; */
+	}
+
+	.ui.segment:hover {
+		background: #f6fbfc;
+		cursor: pointer;
+	}
+
+	.ui.segment>h3 {
+		margin: 10px 0px;
+	}
+
+	body {
+		background: #f5f5f5;
+	}
+
+	h3 {
+		color: #336699;
+	}
+
+	p {
+		color: gray;
+		height: 80px;
+		overflow: auto;
+	}
+</style>
+<div class="ui container animated fadeIn">
+	<br>
+	<div class="ui">
+		<div class="ui two column grid">
+			<div class="column">
+				<div class="ui header page-left-header">HOME</div>
+			</div>
+			<div class="column right aligned">
+				<div class="ui  breadcrumb ">
+					<a href="#" class="section">Today</a>
+					<i class="right chevron icon divider"></i>
+					<div class="active section" id="welcome-date"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<br>
+
+	<div class="ui stackable four column center aligned grid ">
+
+		<div class="column">
+			<div class="ui padded raised segment center aligned">
+				<br>
+				<i class="big user icon orange"></i>
+				<h3>
+					User Management
+				</h3>
+				<p>
+					Manage users for the ICORE4 application. Add, update user profiles
+				</p>
+			</div>
+		</div>
+		<div class="column">
+			<div class="ui padded raised segment center aligned">
+				<br>
+				<i class="big edit icon teal"></i>
+				<h3>
+					Sample Tracking
+				</h3>
+				<p>
+					Manage sample tracking application for clinical trials
+				</p>
+			</div>
+		</div>
+
+		<div class="column">
+			<a href="#/dashboard">
+				<div class="ui padded raised segment center aligned">
+					<br>
+					<i class="big dashboard icon blue"></i>
+					<h3>
+						Dashboard
+					</h3>
+					<p>
+						Manage users for the ICORE4 application. Add, update user profiles
+					</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="column">
+			<div class="ui padded raised segment center aligned">
+				<br>
+				<i class="big comments outline icon blue"></i>
+				<h3>
+					Interactive Agent
+				</h3>
+				<p>
+					Smart agent with a conversational interface to handle tasks.
+				</p>
+			</div>
+		</div>
+
+		<div class="column">
+			<a href="#/team">
+				<div class="ui padded raised segment center aligned">
+					<br>
+					<i class="big upload icon green"></i>
+					<h3>
+						iUploader
+					</h3>
+					<p>
+						Upload big study documents into ICore object store fast and securly
+					</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="column">
+			<a href="#/team">
+				<div class="ui padded raised segment center aligned">
+					<br>
+					<i class="big slideshare icon purple"></i>
+					<h3>
+						iColloborate
+					</h3>
+					<p>
+						Real time Colloboration with Study team members.
+					</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="column">
+			<div class="ui padded raised segment center aligned">
+				<br>
+				<i class="big bell outline icon red"></i>
+				<h3>
+					Notifications
+				</h3>
+				<p>
+					ICORE4 application notifications,alerts & tasks
+				</p>
+			</div>
+		</div>
+
+		<div class="column">
+			<div class="ui padded raised segment center aligned">
+				<br>
+				<i class="big cog  icon red"></i>
+				<h3>
+					Settings
+				</h3>
+				<p>
+					ICORE4 application user settings like password and profile
+				</p>
+			</div>
+		</div>
+
+		
+
+
+	</div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+	$(function () {
+		$("#welcome-date").html(new Date().toISOString());
+		
+	});
+</script>

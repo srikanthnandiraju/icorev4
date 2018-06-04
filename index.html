@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.semanticui.min.css" />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,900' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css' rel='stylesheet' type='text/css'>
+    <link href='css/default.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+    <div id="navbar" class="ui red fixed main stackable menu borderless">
+        <div class="ui container center aligned">
+            <a href="#/welcome" class="ui header item">
+                <h3>ICORE</h3>
+            </a>
+            <a href="#/welcome" class="item">
+                <i class="ui large blue home icon"></i> Home</a>
+            <div class="ui pointing dropdown item">
+                <i class="ui large orange book icon"></i> Study
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <!-- <br> -->
+                    <a class="item" href="#/dashboard">
+                        <i class="edit orange icon"></i>Global Study Dashboard</a>
+                    <!-- <div class="divider"></div> -->
+                    <a class="item" href="#/allstudies">
+                        <i class="clipboard orange icon"></i> All Studies </a>
+                </div>
+            </div>
+
+            <div class="ui pointing dropdown item">
+                <i class="ui large green users icon"></i> Subjects
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <!-- <br> -->
+                    <a class="item" href="#/subjectdashboard">
+                        <i class="edit orange icon"></i>Global Subjects Dashboard</a>
+                    <!-- <div class="divider"></div> -->
+                    <a class="item" href="#/singlesubjectview">
+                        <i class="clipboard orange icon"></i> All Subjects </a>
+                </div>
+            </div>
+
+
+            <div class="right item">
+                <div class="ui input">
+                    <input type="text" style="border-radius:15px;" placeholder="Search...">
+                </div>
+            </div>
+            <a href="#" class="item">
+                <i class="ui large bell teal icon"></i>
+                <label class="ui orange circular label mini" style="margin-left:-13px;margin-top:-20px;"> 10 </label>
+            </a>
+            <div class="ui pointing dropdown item">
+                <i class="ui large cog teal icon"></i> Settings
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <a class="item" href="#/profile">
+                        <i class="user icon teal"></i>Profile</a>
+                    <!-- <div class="divider"></div> -->
+                    <a class="item" href="#/login">
+                        <i class="sign out alternate icon teal"></i>Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="stage" class="stage stage-padded">
+
+    </div>
+    </div>
+
+
+    <div id="fullscreenElement">
+        <i class="io remove icon close big inverted"></i>
+        <div id="fullscreen_stage" class="text-center">
+            <div class="container">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.semanticui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/path.js/0.8.4/path.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-fullscreen-plugin/1.1.4/jquery.fullscreen-min.js"></script>
+    <script src="https://togetherjs.com/togetherjs-min.js"></script>
+
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/routes.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+
+</body>
+
+</html>

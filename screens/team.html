@@ -1,0 +1,186 @@
+<style type="text/css" media="screen">
+    .bread-segment {
+        margin-bottom: 10px;
+        background: none;
+        box-shadow: none;
+        border: none;
+    }
+    
+    .centered-td {
+        text-align: center !important;
+    }
+    
+    .left-td {
+        text-align: left !important;
+    }
+    
+    .line-input {
+        border: 2px solid red !important;
+        padding: 20px;
+    }
+</style>
+
+<div class="ui container animated fadeIn">
+    <div class="ui two column grid">
+        <div class="column">
+            <div class="ui header page-left-header">iColloborate</div>
+        </div>
+        <div class="column right aligned">
+            <div class="ui  breadcrumb ">
+                <a class="section" href="#/welcome">Home</a>
+                <i class="right chevron icon divider"></i>
+                <div class="section">iColloborate</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ui container  animated fadeIn" style="margin-top: 20px;">
+
+    <div class="ui grid  middle aigned">
+        <div class="ten wide column">
+            <h3 class="ui header">
+                <i class="upload teal icon"></i>
+                <div class="content">
+                    iUploader documents
+                    <div class="sub header">List of documents uploaded to iCore platfrom using the iUploader tool</div>
+                </div>
+            </h3>
+
+        </div>
+        <div class="six wide column right aligned middle aligned">
+            <div class="ui tiny button blue" style="border-radius: 15px;" id="collab">
+                <i class="slideshare icon"></i> Invite Colloborators</div>
+        </div>
+    </div>
+
+    <div class="ui segment padded" style="margin-top: 30px;">
+        <table id="team-doc-list" class="ui compact blue celled small table selectable" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Document ID</th>
+                    <th>Title</th>
+                    <th class="centered-td">Phase</th>
+                    <th class="centered-td">Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="javascript:showDialog();"> PICI-MS-101</a>
+                    </td>
+                    <td>Genetic Basis For Clinical Response to CTLA-4 Blockade in Melanoma</td>
+                    <td class="centered-td">
+                        <a class="ui left pointing basic green label">1A</a>
+                    </td>
+                    <td class="centered-td" data-tooltip="Document" data-inverted="">
+                        <i class="clipboard list big teal icon"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="javascript:showDialog();">ST-MS-102</a>
+                    </td>
+                    <td>Sample tracking document report</td>
+                    <td class="centered-td">
+                        <a class="ui left pointing basic red label">1A</a>
+                    </td>
+                    <td class="centered-td" data-tooltip="Document" data-inverted="">
+                        <i class="clipboard list big teal icon"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="javascript:showDialog();">PICI-MS-103</a>
+                    </td>
+                    <td>Genetic Basis For Clinical Response to CTLA-4 Blockade in Melanoma</td>
+                    <td class="centered-td">
+                        <a class="ui left pointing basic green label">II</a>
+                    </td>
+                    <td class="centered-td" data-tooltip="Document" data-inverted="">
+                        <i class="clipboard list big teal icon"></i>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <a href="javascript:showDialog();"> PICI-MS-104</a>
+                    </td>
+                    <td>Genetic Basis For Clinical Response to CTLA-4 Blockade in Melanoma</td>
+                    <td class="centered-td">
+                        <a class="ui left pointing basic blue label">1A</a>
+                    </td>
+                    <td class="centered-td" data-tooltip="Document" data-inverted="">
+                        <i class="clipboard check big green icon"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        Document Details
+    </div>
+    <div class="content">
+        <div class="description">
+            <iframe id="fred" style="border:1px solid #666CCC" title="PDF in an i-Frame" src="http://www.virginia.edu/vpr/irb/HSR_docs/CLINICAL_TRIALS_Phases.pdf" frameborder="1" scrolling="auto" height="400" width="100%"></iframe>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui positive right labeled icon button">
+            Done
+            <i class="check icon"></i>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showDialog() {
+        $('.ui.modal').modal('show');
+    }
+
+    $(function() {
+        $(function() {
+
+            var options = {
+                dom: '<"ui input"f><"ui segment"t><"right-aligned-panel"p>',
+                language: {
+                    //search : "<i class='fa fa-search'></i>",
+                    //info : "_TOTAL_ entries to show (_START_ to _END_)",
+                    info: "",
+                    paginate: {
+                        first: "first",
+                        previous: "<i class='fa fa-chevron-left'></i>",
+                        next: "<i class='fa fa-chevron-right'></i>",
+                        last: "last"
+                    }
+                }
+            };
+            $("#team-doc-list").DataTable();
+            $(".dataTables_filter input").css("border", "none");
+            $(".dataTables_filter input").css("border-bottom", "1px dotted silver");
+            //$(".dataTables_filter input").css("border-radius","15px");
+            $(".dataTables_filter input").css("padding", "8px");
+            $(".dataTables_filter input").css("text-align", "center");
+        });
+
+
+        var flag = 0;
+        $("#collab").click(function() {
+            flag = !flag;
+            TogetherJS(this);
+            if (flag)
+                $("#collab").html("<i class='stop icon'></i> Stop colloboration");
+            else
+                $("#collab").html("<i class='slideshare icon'></i> Invite colloborators");
+        });
+
+        $(".row-item").click(function() {
+
+        });
+
+    });
+</script>
